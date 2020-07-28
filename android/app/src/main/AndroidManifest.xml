@@ -19,7 +19,7 @@
                    android:value="AIzaSyAaECxmdzvds9oziirB2XIJr4hcX_25npI"/>
         <meta-data
                 android:name="com.google.firebase.messaging.default_notification_icon"
-                android:resource="@mipmap/ic_notification" />
+                android:resource="@mipmap/ic_launcher" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
