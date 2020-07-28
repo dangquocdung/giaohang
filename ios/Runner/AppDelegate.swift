@@ -1,5 +1,9 @@
 import UIKit
 import Flutter
+import GoogleMaps
+import Firebase
+import FirebaseMessaging
+import UserNotifications
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
@@ -7,7 +11,14 @@ import Flutter
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
+    GMSServices.provideAPIKey("AIzaSyAaECxmdzvds9oziirB2XIJr4hcX_25npI")
+    FirebaseApp.configure()
     GeneratedPluginRegistrant.register(with: self)
+    
+    
+    if #available(iOS 10.0, *) {
+      UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
+    }
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
